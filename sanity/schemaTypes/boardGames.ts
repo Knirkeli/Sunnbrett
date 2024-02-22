@@ -3,7 +3,7 @@
  */
 const boardGame = {
     name: 'boardgame',
-    title: 'Board Game',
+    title: 'Brettspill',
     type: 'document',
     fields: [
         {
