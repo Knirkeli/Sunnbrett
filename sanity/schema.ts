@@ -7,7 +7,9 @@ import author from './schemaTypes/author'
 import boardGame from './schemaTypes/boardGames'
 import sponsor from './schemaTypes/sponsor'
 import header from './schemaTypes/header'
+import kontakt from './schemaTypes/kontakt'
+import omOss from './schemaTypes/omOss'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [post, author, category, blockContent, boardGame, sponsor, header],
+  types: [post, author, category, blockContent, boardGame, sponsor, header, kontakt, omOss],
 }
