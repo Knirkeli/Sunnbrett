@@ -9,12 +9,9 @@
  * https://github.com/sanity-io/next-sanity
  */
 
-import StudioLayout from '../components/StudioLayout';
+import { NextStudio } from 'next-sanity/studio'
+import config from '../../../sanity.config'
 
 export default function StudioPage() {
-  return (
-    <StudioLayout>
-      {/* Your page content */}
-    </StudioLayout>
-  );
+  return <NextStudio config={config} />
 }
