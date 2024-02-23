@@ -9,6 +9,15 @@ const omOss = {
         type: 'string',
       },
       {
+        name: 'slug',
+        title: 'Slug',
+        type: 'slug',
+        options: {
+          source: 'header',
+          maxLength: 96,
+        },
+      },
+      {
         name: 'description',
         title: 'Description',
         type: 'text',
