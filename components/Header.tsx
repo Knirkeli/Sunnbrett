@@ -9,7 +9,7 @@ import { MenuSquareIcon } from 'lucide-react';
 
 
 const links = [
-  {name: 'Hjem', href: '/'},
+  {name: 'Heim', href: '/'},
   {name: 'Om oss', href: '/Om-oss'},
   {name: 'Våre spel', href: '/Spel'},
   {name: 'Nyhende', href: '/Nyhende'},
