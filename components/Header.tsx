@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from './ui/button';
 import { MenuSquareIcon } from 'lucide-react';
+import { client } from "../sanity/lib/client";
 
 
 const links = [
@@ -17,6 +18,23 @@ const links = [
   
 ]
 
+async function getData() {
+  const query =`*[_type == "header"]{
+    title,
+    image{
+      asset->{
+        _id,
+        url
+      },
+      alt
+    },
+    description
+  }[0]`;
+
+  const data = await client.fetch(query);
+  return data;
+}
+
 export default function Header() {
   const pathname = usePathname();
   return (
@@ -24,11 +42,11 @@ export default function Header() {
         <div className='flex items-center justify-start max-w-full px-4 sm:px-6 lg:max-w-7xl pl-15'>
           <div>
           <Link href="/">
-              <Image className="w-40 h-40 md:w-64 md:h-64" src="/tempmedia/logo.png" alt="Sunnbrett" width={200} height={200} />
+              {/* <Image className="w-40 h-40 md:w-64 md:h-64" src="/tempmedia/logo.png" alt="Sunnbrett" width={200} height={200} /> */}
           </Link>
           </div>
           <div className='ml-9'>
-              <h1 className="text-white text-3xl">Spel for alle</h1>
+              <h1 className="text-white text-3xl">Sunnhordland brettspelklubb</h1>
           </div>
         </div>
         <div className='absolute md:bottom-5 bottom-1 right-0 flex items-end justify-end mx-auto max-w-2xl py-5 sm:px-6 lg:max-w-7xl'>

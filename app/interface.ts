@@ -14,3 +14,30 @@ export interface velkommenPost {
         markDefs: any[];
     }[];
 }
+
+export interface boardGame {
+    name: string;
+    slug: {
+        current: string;
+    };
+    image: {
+        asset: {
+            _ref: string;
+        };
+        alt: string;
+    };
+    tag: string;
+    description: string;
+}
+
+export interface HeaderData {
+    title: string;
+    image: {
+        asset: {
+            _id: string;
+            url: string;
+        };
+        alt: string;
+    };
+    description: string;
+}
