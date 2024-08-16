@@ -62,22 +62,24 @@
 import { boardGame } from "../../app/interface";
 import { getData } from "../Fetch/FetchFokus";
 import { Card, CardContent } from "../ui/card";
-import Image from "next/image";
+import Image, { ImageLoader } from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
 import { client as sanityClient } from "../../sanity/lib/client";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { myLoader } from "../../components/ui/nextLoader";
 
 // Initialize the image URL builder
 const builder = imageUrlBuilder(sanityClient);
 
 // Function to get the URL for an image
-function urlForImage(image) {
+function urlForImage(image: SanityImageSource) {
   return builder.image(image);
 }
 
 // Custom loader function for Next.js Image component
-const myLoader = ({ src, width, quality }) => {
-  return `${src}?w=${width}&q=${quality || 75}`;
-};
+// const myLoader: ImageLoader = ({ src, width, quality }) => {
+//   return `${src}?w=${width}&q=${quality || 75}`;
+// };
 
 export default async function Fokus() {
   const data: boardGame[] = await getData();

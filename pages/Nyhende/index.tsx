@@ -80,22 +80,20 @@ import imageUrlBuilder from "@sanity/image-url";
 import Image from "next/image";
 import BlockContent from "@sanity/block-content-to-react";
 import { useFetchPosts } from "../../components/Fetch/FetchNyhende";
+import { myLoader } from "../../components/ui/nextLoader";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { Post } from "@/app/interface";
 
 // Initialize the image URL builder
 const builder = imageUrlBuilder(sanityClient);
 
 // Function to get the URL for an image
-function urlForImage(image) {
+function urlForImage(image: SanityImageSource) {
   return builder.image(image);
 }
 
-// Custom loader function for Next.js Image component
-const myLoader = ({ src, width, quality }) => {
-  return `${src}?w=${width}&q=${quality || 75}`;
-};
-
 export default function Nyhende() {
-  const posts = useFetchPosts();
+  const posts: Post[] = useFetchPosts();
 
   return (
     <>

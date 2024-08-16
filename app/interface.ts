@@ -91,3 +91,35 @@ export interface ImagesDisplay {
         description: string;
     })[];
 }
+
+export interface Post {
+    title: string;
+    mainImage?: {
+      alt: string;
+      url: string;
+    };
+    author: {
+      name: string;
+    };
+    publishedAt: string;
+    body: any;
+  }
+
+  export interface Sponsor {
+    name: string;
+    slug: {
+      _type: 'slug';
+      current: string;
+    };
+    image: {
+      _type: 'image';
+      asset: {
+        _ref: string;
+        _type: 'reference';
+      };
+      hotspot?: boolean;
+      alt: string;
+    };
+    description: string;
+  }
+  
