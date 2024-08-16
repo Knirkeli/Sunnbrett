@@ -89,8 +89,8 @@ export default function Spel() {
   return (
     <>
       <Header />
-      <div className="container mx-auto p-4">
-        <h1 className="text-3xl font-bold text-center mb-8">Våre Spel</h1>
+      <div className="container mx-auto p-4 text-center">
+        <h1 className="text-3xl font-bold mb-8">Våre Spel</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {data.map((game, idx) => (
             <Card key={idx} className="shadow-lg">
@@ -102,7 +102,7 @@ export default function Spel() {
                   alt={game.image.alt}
                   width={300}
                   height={300}
-                  className="rounded-lg object-cover mb-4"
+                  className="rounded-lg object-cover mb-4 mx-auto my-auto"
                 />
                 <p className="text-gray-700">{game.description}</p>
               </CardContent>
