@@ -76,11 +76,6 @@ function urlForImage(image: SanityImageSource) {
   return builder.image(image);
 }
 
-// Custom loader function for Next.js Image component
-// const myLoader: ImageLoader = ({ src, width, quality }) => {
-//   return `${src}?w=${width}&q=${quality || 75}`;
-// };
-
 export default async function Fokus() {
   const data: boardGame[] = await getData();
 
