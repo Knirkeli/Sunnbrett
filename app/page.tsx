@@ -1,11 +1,21 @@
+"use client";
 import Image from "next/image";
+import Velkommen from "../components/content/Velkommen";
+import Fokus from "../components/content/Fokus";
+import Header from "@/components/content/header";
+import ImageCarousel from "@/components/content/imageCarousel";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <header>
-      <h1>Sunnbrett</h1>
-      </header>
-    </main>
+    <div>
+      <Header />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-5">
+        <Velkommen />
+        <ImageCarousel />
+      </div>
+      <div className="mt-5">
+        <Fokus />
+      </div>
+    </div>
   );
 }
