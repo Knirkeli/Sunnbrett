@@ -80,9 +80,9 @@ export default async function Fokus() {
   const data: boardGame[] = await getData();
 
   return (
-    <div className="text-2xl text-center">
+    <div className="text-2xl text-center w-2/3 mx-auto my-auto">
       <h3>Spel i Fokus</h3>
-      <div className="grid grid-cols-1 lg:grid-cols-4 mt-5">
+      <div className="grid grid-cols-1 lg:grid-cols-2 mt-5">
         {data.map((post, idx) => (
           <Card key={idx}>
             <CardContent className="mt-5">
