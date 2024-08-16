@@ -104,3 +104,22 @@ export interface Post {
     publishedAt: string;
     body: any;
   }
+
+  export interface Sponsor {
+    name: string;
+    slug: {
+      _type: 'slug';
+      current: string;
+    };
+    image: {
+      _type: 'image';
+      asset: {
+        _ref: string;
+        _type: 'reference';
+      };
+      hotspot?: boolean;
+      alt: string;
+    };
+    description: string;
+  }
+  

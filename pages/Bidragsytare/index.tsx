@@ -63,22 +63,20 @@ import { client as sanityClient } from "../../sanity/lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 import Image from "next/image";
 import { useFetchSponsors } from "../../components/Fetch/FetchSpons";
+import { myLoader } from "../../components/ui/nextLoader";
+import { Sponsor } from "@/app/interface";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 // Initialize the image URL builder
 const builder = imageUrlBuilder(sanityClient);
 
 // Function to get the URL for an image
-function urlForImage(image) {
+function urlForImage(image: SanityImageSource) {
   return builder.image(image);
 }
 
-// Custom loader function for Next.js Image component
-const myLoader = ({ src, width, quality }) => {
-  return `${src}?w=${width}&q=${quality || 75}`;
-};
-
 export default function Bidragsytare() {
-  const sponsors = useFetchSponsors();
+  const sponsors: Sponsor[] = useFetchSponsors();
 
   return (
     <>
