@@ -1,18 +1,20 @@
-import { client } from "../../sanity/lib/client";
+//not in use as
 
-export async function getHeaderData() {
-  const query = `*[_type == "header"]{
-    title,
-    image{
-      asset->{
-        _id,
-        url
-      },
-      alt
-    },
-    description
-  }[0]`;
+// import { client } from "../../sanity/lib/client";
 
-  const data = await client.fetch(query);
-  return data;
-}
+// export async function getHeaderData() {
+//   const query = `*[_type == "header"]{
+//     title,
+//     image{
+//       asset->{
+//         _id,
+//         url
+//       },
+//       alt
+//     },
+//     description
+//   }[0]`;
+
+//   const data = await client.fetch(query);
+//   return data;
+// }

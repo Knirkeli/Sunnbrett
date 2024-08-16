@@ -100,7 +100,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
 import { MenuSquareIcon } from "lucide-react";
-import { getHeaderData } from "./FetchHeader";
+import { myLoader } from "../../components/ui/nextLoader";
+// import { getHeaderData } from "../Fetch/FetchHeader"; //not in use
 
 const links = [
   { name: "Heim", href: "/" },
@@ -110,9 +111,17 @@ const links = [
   { name: "Bidragsytare", href: "/Bidragsytare" },
 ];
 
-const myLoader = ({ src, width, quality }) => {
-  return `${src}?w=${width}&q=${quality || 75}`;
-};
+// const myLoader = ({
+//   src,
+//   width,
+//   quality,
+// }: {
+//   src: string;
+//   width: number;
+//   quality?: number;
+// }) => {
+//   return `${src}?w=${width}&q=${quality || 75}`;
+// };
 
 export default function Header() {
   const pathname = usePathname();

@@ -91,3 +91,16 @@ export interface ImagesDisplay {
         description: string;
     })[];
 }
+
+export interface Post {
+    title: string;
+    mainImage?: {
+      alt: string;
+      url: string;
+    };
+    author: {
+      name: string;
+    };
+    publishedAt: string;
+    body: any;
+  }

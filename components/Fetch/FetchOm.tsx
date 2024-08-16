@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { client as sanityClient } from "../../sanity/lib/client";
+import { Post } from "../../app/interface";
 
-export function useFetchPosts() {
+export function useFetchPosts(): Post[] {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
