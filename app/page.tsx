@@ -39,7 +39,7 @@ export default function Home() {
           <ImageCarousel />
         </div>
       </div>
-      <div className="my-5">
+      <div className="my-5 flex">
         <Fokus />
       </div>
     </div>
