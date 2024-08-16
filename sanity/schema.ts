@@ -9,7 +9,8 @@ import sponsor from './schemaTypes/sponsor'
 import header from './schemaTypes/header'
 import kontakt from './schemaTypes/kontakt'
 import omOss from './schemaTypes/omOss'
+import imagesDisplay from './schemaTypes/imagesDisplay'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [post, author, category, blockContent, boardGame, sponsor, header, kontakt, omOss],
+  types: [post, author, category, blockContent, boardGame, sponsor, header, kontakt, omOss, imagesDisplay],
 }

@@ -1,3 +1,20 @@
+// export interface velkommenPost {
+//     _id: string;
+//     title: string;
+//     body: {
+//         children: {
+//             _type: string;
+//             marks: string[];
+//             text: string;
+//             _key: string;
+//         }[];
+//         _type: string;
+//         style: string;
+//         _key: string;
+//         markDefs: any[];
+//     }[];
+// }
+
 export interface velkommenPost {
     _id: string;
     title: string;
@@ -11,7 +28,11 @@ export interface velkommenPost {
         _type: string;
         style: string;
         _key: string;
-        markDefs: any[];
+        markDefs: {
+            _key: string;
+            _type: string;
+            href?: string;
+        }[];
     }[];
 }
 
@@ -40,4 +61,33 @@ export interface HeaderData {
         alt: string;
     };
     description: string;
+}
+
+export interface ImageField {
+    name: string;
+    title: string;
+    type: string;
+    description: string;
+}
+
+export interface Image {
+    name: string;
+    title: string;
+    type: string;
+    options: {
+        hotspot: boolean;
+    };
+    fields: ImageField[];
+}
+
+export interface ImagesDisplay {
+    name: string;
+    title: string;
+    type: string;
+    fields: (Image | {
+        name: string;
+        title: string;
+        type: string;
+        description: string;
+    })[];
 }
