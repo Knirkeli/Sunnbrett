@@ -48,7 +48,7 @@ import { Card, CardContent } from "../ui/card";
 export default async function Velkommen() {
   const data: velkommenPost[] = await getData();
   return (
-    <div className="w-3/4 lg-w-2/3 flex mx-auto my-auto">
+    <div className="w-3/4 lg-w-full flex mx-auto my-auto">
       <div className="w-11/12">
         {data.map((post, idx) => (
           <Card key={idx} className="mb-5">
