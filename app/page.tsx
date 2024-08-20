@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-5">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-5 shadow-xl pb-5">
         <div className="flex justify-center">
           <Velkommen />
         </div>
