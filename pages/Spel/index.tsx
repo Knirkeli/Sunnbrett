@@ -87,7 +87,7 @@ function truncateText(text: string, maxWords: number): string {
 }
 
 export default function Spel() {
-  const [data, setData] = useState<boardGame[]>([]); // Define the type for the state
+  const [data, setData] = useState<boardGame[]>([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -117,7 +117,7 @@ export default function Spel() {
                     alt={game.image.alt}
                     layout="fill"
                     objectFit="cover"
-                    className="rounded-lg"
+                    className="rounded-lg pb-2"
                   />
                 </div>
                 <p className="text-gray-700">
