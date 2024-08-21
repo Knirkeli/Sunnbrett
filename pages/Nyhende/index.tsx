@@ -9,6 +9,7 @@
 // import { myLoader } from "../../components/ui/nextLoader";
 // import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 // import { Post } from "@/app/interface";
+// import { Card, CardContent } from "../../components/ui/card"; // Import the Card component
 
 // // Initialize the image URL builder
 // const builder = imageUrlBuilder(sanityClient);
@@ -20,38 +21,43 @@
 
 // export default function Nyhende() {
 //   const posts: Post[] = useFetchPosts();
-
 //   return (
 //     <>
 //       <Header />
 //       <div className="container mx-auto p-4">
 //         <h3 className="text-3xl font-bold text-center mb-8">Nyhende</h3>
-//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+//         <div className="grid grid-cols-1 gap-8 shadow-lg pb-5">
 //           {posts.map((post, idx) => (
-//             <div key={idx} className="shadow-lg p-4">
-//               <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
+//             <Card
+//               key={idx}
+//               className="w-full md:w-4/5 shadow-lg mx-auto flex flex-col md:flex-row pb-3"
+//             >
 //               {post.mainImage && (
-//                 <Image
-//                   loader={myLoader}
-//                   src={urlForImage(post.mainImage).url()}
-//                   alt={post.mainImage.alt}
-//                   width={300}
-//                   height={300}
-//                   className="rounded-lg object-cover mb-4"
-//                 />
+//                 <div className="md:w-1/2 flex justify-center items-center">
+//                   <Image
+//                     loader={myLoader}
+//                     src={urlForImage(post.mainImage).url()}
+//                     alt={post.mainImage.alt}
+//                     width={300}
+//                     height={300}
+//                     className="rounded-lg object-cover mb-4 md:mb-0"
+//                   />
+//                 </div>
 //               )}
-//               <p className="text-gray-700">By {post.author.name}</p>
-//               <p className="text-gray-700">
-//                 {new Date(post.publishedAt).toLocaleDateString()}
-//               </p>
-//               <BlockContent blocks={post.body} />
-//             </div>
+//               <CardContent className="p-4 md:w-1/2">
+//                 <h2 className="text-xl font-semibold mb-2 text-center md:text-left">
+//                   {post.title}
+//                 </h2>
+//                 <BlockContent blocks={post.body} />
+//               </CardContent>
+//             </Card>
 //           ))}
 //         </div>
 //       </div>
 //     </>
 //   );
 // }
+
 import { useEffect, useState } from "react";
 import Header from "@/components/content/header";
 import "../../app/globals.css";
@@ -75,13 +81,20 @@ function urlForImage(image: SanityImageSource) {
 
 export default function Nyhende() {
   const posts: Post[] = useFetchPosts();
+
+  // Sort posts by date (newest first)
+  const sortedPosts = posts.sort(
+    (a, b) =>
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
+
   return (
     <>
       <Header />
       <div className="container mx-auto p-4">
         <h3 className="text-3xl font-bold text-center mb-8">Nyhende</h3>
         <div className="grid grid-cols-1 gap-8 shadow-lg pb-5">
-          {posts.map((post, idx) => (
+          {sortedPosts.map((post, idx) => (
             <Card
               key={idx}
               className="w-full md:w-4/5 shadow-lg mx-auto flex flex-col md:flex-row pb-3"
@@ -98,11 +111,14 @@ export default function Nyhende() {
                   />
                 </div>
               )}
-              <CardContent className="p-4 md:w-1/2">
+              <CardContent className="p-4 md:w-1/2 relative">
                 <h2 className="text-xl font-semibold mb-2 text-center md:text-left">
                   {post.title}
                 </h2>
                 <BlockContent blocks={post.body} />
+                <div className="absolute bottom-2 right-2 text-gray-500 text-sm">
+                  {new Date(post.publishedAt).toLocaleDateString()}
+                </div>
               </CardContent>
             </Card>
           ))}
