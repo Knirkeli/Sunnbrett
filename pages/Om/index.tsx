@@ -10,6 +10,7 @@ import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { Post } from "@/app/interface";
 import { myLoader } from "../../components/ui/nextLoader"; // Import the loader function
 import { Card, CardContent } from "../../components/ui/card"; // Import the Card component
+import Footer from "@/components/content/footer";
 
 // Initialize the image URL builder
 const builder = imageUrlBuilder(sanityClient);
@@ -25,7 +26,7 @@ export default function Om() {
   return (
     <>
       <Header />
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto p-4 pb-[120px]">
         <div className="flex flex-wrap justify-center gap-8">
           {posts.map((post, idx) => (
             <Card key={idx} className="w-full md:w-4/5 shadow-lg mx-auto">
@@ -60,6 +61,7 @@ export default function Om() {
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -57,6 +57,7 @@ import { myLoader } from "../../components/ui/nextLoader";
 import { Sponsor } from "@/app/interface";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { Card, CardContent } from "../../components/ui/card";
+import Footer from "@/components/content/footer";
 
 // Initialize the image URL builder
 const builder = imageUrlBuilder(sanityClient);
@@ -72,7 +73,7 @@ export default function Bidragsytare() {
   return (
     <>
       <Header />
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto p-4 pt-5 pb-[120px]">
         <h3 className="text-3xl font-bold text-center mb-8">Bidragsytare</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
           {sponsors.map((sponsor, idx) => (
@@ -93,6 +94,7 @@ export default function Bidragsytare() {
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -70,6 +70,7 @@ import { myLoader } from "../../components/ui/nextLoader";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { Post } from "@/app/interface";
 import { Card, CardContent } from "../../components/ui/card"; // Import the Card component
+import Footer from "@/components/content/footer";
 
 // Initialize the image URL builder
 const builder = imageUrlBuilder(sanityClient);
@@ -91,7 +92,7 @@ export default function Nyhende() {
   return (
     <>
       <Header />
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto p-4 pb-[120px]">
         <h3 className="text-3xl font-bold text-center mb-8">Nyhende</h3>
         <div className="grid grid-cols-1 gap-8 shadow-lg pb-5">
           {sortedPosts.map((post, idx) => (
@@ -124,6 +125,7 @@ export default function Nyhende() {
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 }
