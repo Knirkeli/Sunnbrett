@@ -101,7 +101,14 @@ import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
 import { MenuSquareIcon } from "lucide-react";
 import { myLoader } from "../../components/ui/nextLoader";
-// import { getHeaderData } from "../Fetch/FetchHeader"; //not in use
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const links = [
   { name: "Heim", href: "/" },
@@ -129,7 +136,9 @@ export default function Header() {
           </Link>
         </div>
         <div className="ml-9">
-          <h1 className="text-white text-3xl">Sunnhordland brettspelklubb</h1>
+          <h1 className="text-white text-xl md:text-3xl">
+            Sunnhordland brettspelklubb
+          </h1>
         </div>
       </div>
       <div className="absolute md:bottom-5 bottom-1 right-0 flex items-end justify-end mx-auto max-w-2xl py-5 sm:px-6 lg:max-w-7xl">
@@ -155,11 +164,20 @@ export default function Header() {
           ))}
         </nav>
         <div className="flex items-center sm:py-auto sm:px-6">
-          <Button
-            className={`${styles.header} lg:hidden flex flex-col gap-y-1.5 h-12 w-12 sm:h20 sm:w-20`}
-          >
-            <MenuSquareIcon />
-          </Button>
+          <Sheet>
+            <SheetTrigger>
+              <MenuSquareIcon className="lg:hidden flex flex-col gap-y-1.5 h-12 w-12 sm:h20 sm:w-20 text-white" />
+            </SheetTrigger>
+            <SheetContent>
+              <SheetHeader>
+                <SheetTitle>Are you absolutely sure?</SheetTitle>
+                <SheetDescription>
+                  This action cannot be undone. This will permanently delete
+                  your account and remove your data from our servers.
+                </SheetDescription>
+              </SheetHeader>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>
