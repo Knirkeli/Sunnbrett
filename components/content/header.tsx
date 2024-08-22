@@ -111,18 +111,6 @@ const links = [
   { name: "Bidragsytare", href: "/Bidragsytare" },
 ];
 
-// const myLoader = ({
-//   src,
-//   width,
-//   quality,
-// }: {
-//   src: string;
-//   width: number;
-//   quality?: number;
-// }) => {
-//   return `${src}?w=${width}&q=${quality || 75}`;
-// };
-
 export default function Header() {
   const pathname = usePathname();
   return (

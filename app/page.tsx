@@ -26,6 +26,7 @@ import Velkommen from "../components/content/Velkommen";
 import Fokus from "../components/content/Fokus";
 import Header from "@/components/content/header";
 import ImageCarousel from "@/components/content/imageCarousel";
+import Footer from "@/components/content/footer";
 
 export default function Home() {
   return (
@@ -42,6 +43,7 @@ export default function Home() {
       <div className="my-5 flex">
         <Fokus />
       </div>
+      <Footer />
     </div>
   );
 }
