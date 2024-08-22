@@ -59,3 +59,6 @@
     @apply bg-background text-foreground;
   }
 }
+.header {
+  background-color: #00162B;
+}
