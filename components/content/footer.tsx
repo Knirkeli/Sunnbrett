@@ -3,12 +3,12 @@ import { myLoader } from "../ui/nextLoader";
 
 export default function Footer() {
   return (
-    <footer className="fixed bottom-0 w-full border-t bg-white mt-8">
+    <footer className="fixed bottom-0 w-full border-t bg-white mt-8 h-[316px] lg:h-[110px]">
       <div className="flex flex-col lg:flex-row items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl">
-        <div className="flex space-x-4 mb-4 lg:mb-0">
+        <div className="flex space-x-4 mb-4 lg:mb-0 left-0">
           <Image
             loader={myLoader}
-            className="w-10 h-10 md:w-10 md:h-10"
+            className="w-16 h-16 mt-2"
             src="spond.png"
             alt="Sunnbrett"
             width={20}
@@ -16,7 +16,7 @@ export default function Footer() {
           />
           <Image
             loader={myLoader}
-            className="w-10 h-10 md:w-10 md:h-10"
+            className="w-16 h-16 mt-2"
             src="instagram.png"
             alt="Sunnbrett"
             width={20}
@@ -24,7 +24,7 @@ export default function Footer() {
           />
           <Image
             loader={myLoader}
-            className="w-10 h-10 md:w-10 md:h-10"
+            className="w-16 h-16 mt-2"
             src="facebook.png"
             alt="Sunnbrett"
             width={20}

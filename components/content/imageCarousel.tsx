@@ -116,7 +116,7 @@ const ImageCarousel: React.FC = () => {
                         alt={
                           image.image.alt || `Image ${index * 4 + subIndex + 1}`
                         }
-                        className="absolute top-0 left-0 w-full h-full object-cover rounded cursor-pointer"
+                        className="absolute top-0 left-0 w-full h-full object-cover rounded cursor-pointer transform transition-transform duration-300 hover:scale-105"
                       />
                     </div>
                   ))}
