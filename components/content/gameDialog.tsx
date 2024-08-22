@@ -28,7 +28,7 @@ const GameDialog: React.FC<GameDialogProps> = ({
     <Dialog>
       <DialogTrigger asChild>
         <Card
-          className="shadow-lg cursor-pointer"
+          className="shadow-lg cursor-pointer transform transition-transform duration-300 hover:scale-105"
           onClick={() => setSelectedGame(game)}
         >
           <CardContent className="p-4">
@@ -44,7 +44,7 @@ const GameDialog: React.FC<GameDialogProps> = ({
               />
             </div>
             <p className="text-gray-700">
-              {truncateText(game.description, 30)}
+              {truncateText(game.description, 10)}
             </p>
           </CardContent>
         </Card>
