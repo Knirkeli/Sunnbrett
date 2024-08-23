@@ -146,7 +146,7 @@ export default function Footer() {
   return (
     <footer className="fixed bottom-0 w-full border-t bg-white mt-8 h-10 lg:h-[110px] flex items-center">
       <div className="flex md:grid-cols-3 grid-cols-1 items-center justify-center justify-between mx-auto px-4 sm:px-6 gap-8 w-full">
-        <div className="flex space-x-4 mb-4 lg:mb-0 lg:ml-4 xl:mx-10">
+        <div className="lg:space-x-4 mb-4 lg:mb-0 lg:ml-4 xl:mx-10 hidden lg:flex">
           <Link
             href="https://l.facebook.com/l.php?u=https%3A%2F%2Fspond.com%2Flanding%2Fgroup%2FLDYFD%3Ffbclid%3DIwZXh0bgNhZW0CMTAAAR12MJSfg7z0g-zxM_LdFK3fYPjTnmN1Nw5p_-gYhxrusgqSnBkatUNYbfM_aem_IAOmLyHH_X_vjevEDiNNaw&h=AT0ytI1xhEmTkgzG7G9zdSViIdZSk1WTmeuFlFj6u48L3Xk49XYqtpzv427hzSkbvmMQnIBYsKEUNSb0QnMBkF48dsw7IJUzi-DUKb3W8wLSDk0yVyW7XpEuoN6mZQQYdj5hFsD8FDr5njday7Q"
             passHref
