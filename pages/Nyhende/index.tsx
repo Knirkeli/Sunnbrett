@@ -112,12 +112,12 @@ export default function Nyhende() {
                   />
                 </div>
               )}
-              <CardContent className="p-4 md:w-1/2 relative">
+              <CardContent className="p-4 md:w-1/2 relative pb-6">
                 <h2 className="text-xl font-semibold mb-2 text-center md:text-left">
                   {post.title}
                 </h2>
                 <BlockContent blocks={post.body} />
-                <div className="absolute bottom-2 right-2 text-gray-500 text-sm">
+                <div className="absolute bottom-2 right-2 text-gray-500 text-sm ">
                   {new Date(post.publishedAt).toLocaleDateString()}
                 </div>
               </CardContent>

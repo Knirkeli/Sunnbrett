@@ -54,7 +54,7 @@ export default function Fokus() {
   return (
     <div className="text-2xl text-center w-10/12 lg:w-4/5 xl:w-10/12 mx-auto my-auto">
       <h3>Spel i Fokus</h3>
-      <div className="grid grid-cols-1 lg:grid-cols-4 mt-5 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-4 mt-5 mb-5 gap-6">
         {data.map((post, idx) => (
           <GameDialog
             key={idx}
