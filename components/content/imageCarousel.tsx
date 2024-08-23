@@ -127,7 +127,7 @@ const ImageCarousel: React.FC = () => {
   }
 
   return (
-    <div className="w-full sm:w-3/4 flex mx-auto my-auto p-2 sm:p-0">
+    <div className="w-full sm:w-3/4 flex mx-auto my-auto sm:p-0">
       <div className="w-full md:w-11/12 relative">
         <Carousel opts={{ loop: true }} className="shadow-xl">
           <CarouselContent>

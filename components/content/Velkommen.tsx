@@ -56,7 +56,7 @@ export default async function Velkommen() {
       <div className="w-full max-w-4xl">
         {data.map((post, idx) => (
           <Card key={idx} className="mb-5">
-            <CardContent className="mt-5 p-4 rounded shadow-xl">
+            <CardContent className="mx-auto my-auto p-4 rounded shadow-xl">
               <h3 className="text-2xl font-bold mb-4 text-center">
                 {post.title}
               </h3>
