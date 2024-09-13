@@ -132,7 +132,15 @@
 //   );
 // }
 
-import { useEffect, useState } from "react";
+import {
+  JSXElementConstructor,
+  PromiseLikeOfReactNode,
+  ReactElement,
+  ReactNode,
+  ReactPortal,
+  useEffect,
+  useState,
+} from "react";
 import Header from "@/components/content/header";
 import "../../app/globals.css";
 import { client as sanityClient } from "../../sanity/lib/client";
@@ -155,7 +163,7 @@ function urlForImage(image: SanityImageSource) {
 }
 
 // Function to map Sanity styles to CSS classes
-const getAlignmentClass = (style) => {
+const getAlignmentClass = (style: any) => {
   switch (style) {
     case "center":
       return "text-center";
@@ -209,7 +217,23 @@ export default function Nyhende() {
                     blocks={post.body}
                     serializers={{
                       types: {
-                        block: (props) => {
+                        block: (props: {
+                          node: { style: any };
+                          children:
+                            | string
+                            | number
+                            | boolean
+                            | ReactElement<
+                                any,
+                                string | JSXElementConstructor<any>
+                              >
+                            | Iterable<ReactNode>
+                            | ReactPortal
+                            | PromiseLikeOfReactNode
+                            | Iterable<ReactNode>
+                            | null
+                            | undefined;
+                        }) => {
                           const alignmentClass = getAlignmentClass(
                             props.node.style
                           );
