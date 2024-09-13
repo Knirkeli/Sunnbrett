@@ -56,8 +56,8 @@ export default function Velkommen() {
     <div className="w-full flex justify-center px-5">
       <div className="w-full max-w-4xl">
         {posts.map((post, idx) => (
-          <Card key={idx} className="mb-5">
-            <CardContent className="mx-auto my-auto p-4 rounded shadow-xl">
+          <Card key={idx} className="mb-5 border-none shadow-none">
+            <CardContent className="mx-auto my-auto p-4 rounded border-none">
               <h3 className="text-2xl font-bold mb-4 text-center">
                 {post.title}
               </h3>
