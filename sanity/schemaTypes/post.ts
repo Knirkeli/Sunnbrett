@@ -24,6 +24,7 @@ export default defineType({
       title: 'Author',
       type: 'reference',
       to: {type: 'author'},
+      description: 'Finner du ikke deg selv i listen? Legg til deg selv ved å trykke create',
     }),
     defineField({
       name: 'mainImage',
@@ -38,13 +39,15 @@ export default defineType({
           type: 'string',
           title: 'Alternative Text',
         }
-      ]
+      ],
+      description: 'Husk at høyoppløselige bilder kan gjøre siden tregere!',
     }),
     defineField({
       name: 'categories',
       title: 'Categories',
       type: 'array',
       of: [{type: 'reference', to: {type: 'category'}}],
+      description: 'Velg kategori som passer til innholdet. Valg av katgori vil påvirke hvor innholdet vises på siden.',
     }),
     defineField({
       name: 'publishedAt',
@@ -55,6 +58,7 @@ export default defineType({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+      description: 'Her skrives innholdet til posten. Du kan legge til bilder og lenker.',
     }),
   ],
 

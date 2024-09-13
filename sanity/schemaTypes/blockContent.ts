@@ -30,6 +30,9 @@ export default defineType({
         {title: 'H3', value: 'h3'},
         {title: 'H4', value: 'h4'},
         {title: 'Quote', value: 'blockquote'},
+        {title: 'Center', value: 'center'},
+        {title: 'Left', value: 'left'},
+        {title: 'Right', value: 'right'},
       ],
       lists: [{title: 'Bullet', value: 'bullet'}],
       // Marks let you mark up inline text in the Portable Text Editor

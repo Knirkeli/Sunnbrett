@@ -1,41 +1,3 @@
-// const imagesDisplay = {
-//     name: 'imageWithDetails',
-//     title: 'Bilder',
-//     type: 'document',
-//     fields: [
-//       {
-//         name: 'image',
-//         title: 'Image',
-//         type: 'image',
-//         options: {
-//           hotspot: true // Enables image cropping
-//         },
-//         fields: [
-//           {
-//             name: 'alt',
-//             title: 'Alt Text',
-//             type: 'string',
-//             description: 'Alternative text for the image'
-//           }
-//         ]
-//       },
-//       {
-//         name: 'description',
-//         title: 'Description',
-//         type: 'text',
-//         description: 'A description of the image'
-//       },
-//       {
-//         name: 'date',
-//         title: 'Date',
-//         type: 'datetime',
-//         description: 'The date the image was added'
-//       }
-//     ]
-// };
-
-// export default imagesDisplay;
-
 const imagesDisplay = {
     name: 'imageWithDetails',
     title: 'Bilder',
@@ -45,15 +7,16 @@ const imagesDisplay = {
         name: 'image',
         title: 'Image',
         type: 'image',
+        description: 'Bilder lagt til her vil vises på forsiden av nettsiden',
         options: {
-          hotspot: true // Enables image cropping
+          hotspot: true 
         },
         fields: [
           {
             name: 'alt',
             title: 'Alt Text',
             type: 'string',
-            description: 'Alternative text for the image'
+            description: 'Alternativ tekst for bildet, for skjermlesere'
           }
         ]
       },
@@ -61,19 +24,19 @@ const imagesDisplay = {
         name: 'title',
         title: 'Title',
         type: 'string',
-        description: 'Title of the image'
+        description: 'Tittel på bildet'
       },
       {
         name: 'description',
         title: 'Description',
         type: 'text',
-        description: 'A description of the image'
+        description: 'Beskrivelse av bildet'
       },
       {
         name: 'date',
         title: 'Date',
         type: 'datetime',
-        description: 'The date the image was added'
+        description: 'Dato bildet ble tatt'
       }
     ]
 };

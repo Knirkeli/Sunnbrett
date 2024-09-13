@@ -7,6 +7,7 @@ const sponsor = {
         name: 'name',
         title: 'Name',
         type: 'string',
+        description: 'Navn på sponsoren',
       },
       {
         name: 'slug',
@@ -21,6 +22,7 @@ const sponsor = {
         name: 'image',
         title: 'Image',
         type: 'image',
+        description: 'Logo eller bilde av sponsoren',
         options: {
           hotspot: true,
         },
@@ -36,6 +38,7 @@ const sponsor = {
         name: 'description',
         title: 'Description',
         type: 'text',
+        description: 'Hva har sponsoren bidratt med?',
       },
     ],
     preview: {
