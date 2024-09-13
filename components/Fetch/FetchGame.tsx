@@ -1,5 +1,5 @@
 import { client as sanityClient } from "../../sanity/lib/client";
-import { boardGame } from "@/app/interface"; // Adjust the import path as needed
+import { boardGame } from "@/app/interface";
 
 export async function getData(): Promise<boardGame[]> {
   const query = `*[_type == "boardgame"] {

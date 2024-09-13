@@ -33,6 +33,41 @@
 //   );
 // }
 
+// import { useEffect, useState } from "react";
+// import { boardGame } from "../../app/interface";
+// import { getData } from "../Fetch/FetchFokus";
+// import GameDialog from "../content/gameDialog";
+// import "../../app/globals.css";
+
+// export default function Fokus() {
+//   const [data, setData] = useState<boardGame[]>([]);
+//   const [selectedGame, setSelectedGame] = useState<boardGame | null>(null);
+
+//   useEffect(() => {
+//     async function fetchData() {
+//       const result = await getData();
+//       setData(result);
+//     }
+//     fetchData();
+//   }, []);
+
+//   return (
+//     <div className="text-2xl text-center w-10/12 lg:w-4/5 xl:w-10/12 mx-auto my-auto">
+//       <h3>Spel i Fokus</h3>
+//       <div className="grid grid-cols-1 lg:grid-cols-4 mt-5 mb-5 gap-6">
+//         {data.map((post, idx) => (
+//           <GameDialog
+//             key={idx}
+//             game={post}
+//             selectedGame={selectedGame}
+//             setSelectedGame={setSelectedGame}
+//           />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+
 import { useEffect, useState } from "react";
 import { boardGame } from "../../app/interface";
 import { getData } from "../Fetch/FetchFokus";
@@ -54,14 +89,15 @@ export default function Fokus() {
   return (
     <div className="text-2xl text-center w-10/12 lg:w-4/5 xl:w-10/12 mx-auto my-auto">
       <h3>Spel i Fokus</h3>
-      <div className="grid grid-cols-1 lg:grid-cols-4 mt-5 mb-5 gap-6">
+      <div className="flex flex-wrap justify-center mt-5 mb-5 gap-6">
         {data.map((post, idx) => (
-          <GameDialog
-            key={idx}
-            game={post}
-            selectedGame={selectedGame}
-            setSelectedGame={setSelectedGame}
-          />
+          <div key={idx} className="w-full lg:w-1/4">
+            <GameDialog
+              game={post}
+              selectedGame={selectedGame}
+              setSelectedGame={setSelectedGame}
+            />
+          </div>
         ))}
       </div>
     </div>

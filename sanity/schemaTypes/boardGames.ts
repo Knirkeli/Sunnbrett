@@ -10,6 +10,7 @@ const boardGame = {
             name: 'name',
             title: 'Name',
             type: 'string',
+            description: 'Navn på brettspillet',
         },
         {
             name: 'slug',
@@ -24,6 +25,7 @@ const boardGame = {
             name: 'image',
             title: 'Image',
             type: 'image',
+            description: 'Bilde av brettspillet husk at store filer kan gjøre siden tregere',
             options: {
                 hotspot: true,
             },
@@ -32,6 +34,7 @@ const boardGame = {
                   name: 'alt',
                   type: 'string',
                   title: 'Alternative Text',
+                  description: 'Alternativ tekst for bildet, for skjermlesere'
                 }
               ]
         },
@@ -39,11 +42,13 @@ const boardGame = {
             name: 'tag',
             title: 'Tag',
             type: 'string',
+            description: 'Tag for brettspillet disse kan brukes til å gruppere brettspill, f.eks. "Strategi" eller "Fantasy"',
         },
         {
             name: 'description',
             title: 'Description',
             type: 'text',
+            description: 'Beskriv spillet'
         },
     ],
 };

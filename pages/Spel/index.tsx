@@ -23,7 +23,7 @@ export default function Spel() {
       <Header />
       <div className="container mx-auto p-4 text-center pb-[120px]">
         <h1 className="text-3xl font-bold mb-8">Våre Spel</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {data.map((game, idx) => (
             <GameDialog
               key={idx}
